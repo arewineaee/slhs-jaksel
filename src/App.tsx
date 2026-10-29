@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import Generator from './Generator'
 import './App.css'
+import PersyaratanProsedur from "./PersyaratanProsedur";
+import ScrollToTop from "./ScrollToTop";
+
 
 function Home() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -158,9 +161,16 @@ function Home() {
               <div className="about-copy">
                 <h3>Apa itu SLHS?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua.
+                  Berdasarkan Peraturan Pemerintah RI Nomor 28 Tahun 2025 dan Peraturan Menteri Kesehatan RI Nomor 11 Tahun 2025,
+                  Sertifikat Laik Higiene Sanitasi (SLHS) adalah bukti tertulis keamanan pangan untuk pemenuhan standar baku mutu
+                  dan persyaratan kesehatan pangan olahan siap saji.
+                </p>
+
+                <p>
+                  SLHS merupakan salah satu Perizinan Berusaha untuk Menunjang Kegiatan Usaha (PB UMKU) pada sektor kesehatan.
+                  PB UMKU adalah perizinan yang diperlukan bagi pelaku usaha untuk menunjang pelaksanaan kegiatan usaha dan/atau produk pada tahap operasional dan/atau komersial.
+                  Melalui sertifikat ini, pemerintah memastikan bahwa Tempat Pengelolaan Pangan (TPP) telah menerapkan prinsip higiene dan sanitasi serta memenuhi persyaratan
+                  keamanan pangan sehingga pangan yang diolah dan disajikan aman untuk dikonsumsi masyarakat.
                 </p>
               </div>
             </article>
@@ -170,10 +180,11 @@ function Home() {
               <div className="about-copy">
                 <h3>Siapa saja yang perlu memiliki SLHS?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris.
+                  Kewajiban kepemilikan SLHS ditentukan berdasarkan jenis kegiatan usaha, klasifikasi KBLI, tingkat risiko, dan skala usaha. Beberapa kategori yang tercakup dalam ketentuan antara lain restoran, kedai makanan tertentu, jasa boga, rumah minum atau kafe, serta depot air minum. Pelaku usaha perlu memeriksa persyaratan yang sesuai dengan kategori usahanya.
                 </p>
+                <Link to="/persyaratan-prosedur" className="learn-more">
+                  Pelajari selengkapnya <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </article>
 
@@ -182,10 +193,11 @@ function Home() {
               <div className="about-copy">
                 <h3>Bagaimana mengajukan SLHS?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Duis aute irure dolor in reprehenderit in voluptate velit
-                  esse.
+                  Pelaku usaha perlu menyiapkan dokumen perizinan, hasil pemeriksaan mandiri melalui Inspeksi Kesehatan Lingkungan (IKL), sertifikat pelatihan keamanan pangan, dokumen kesehatan penjamah pangan, serta hasil uji laboratorium sesuai persyaratan. Permohonan diajukan melalui OSS pada menu PB UMKU untuk selanjutnya melalui proses verifikasi administrasi dan lapangan oleh petugas berwenang.
                 </p>
+                <Link to="/persyaratan-prosedur" className="learn-more">
+                  Pelajari selengkapnya <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </article>
           </div>
@@ -212,7 +224,7 @@ function Home() {
           <span>SLHS JAKSEL</span>
         </a>
 
-      
+
 
         <span className="footer-note">
           Informasi resmi akan dilengkapi setelah sumber dan ketentuan
@@ -228,6 +240,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/generator" element={<Generator />} />
+      <Route
+        path="/persyaratan-prosedur"
+        element={<PersyaratanProsedur />}
+      />
     </Routes>
   )
 }
