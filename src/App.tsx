@@ -3,7 +3,6 @@ import { Link, Route, Routes } from 'react-router-dom'
 import Generator from './Generator'
 import './App.css'
 import PersyaratanProsedur from "./PersyaratanProsedur";
-import ScrollToTop from "./ScrollToTop";
 
 
 function Home() {
